@@ -1,0 +1,24 @@
+@url=http://localhost:3001/api
+@json=Content-Type: application/json
+
+### 测试
+get http://localhost:3001
+
+### 创建房间
+post {{url}}/create
+{{json}}
+
+{
+    "nickname": "114514",
+    "title": "114514"
+}
+
+### 加入房间
+post {{url}}/join
+{{json}}
+
+{
+    "nickname": "1919810",
+    "roomUuid": "64a3907aa3382c36778d8cb2",
+    "invitation": "ES5G2"
+}
