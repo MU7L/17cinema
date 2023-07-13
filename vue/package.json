@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "clipboard": "^2.0.11",
     "pinia": "^2.1.4",
+    "socket.io-client": "^4.7.1",
     "vue": "^3.2.47",
     "vue-router": "^4.2.2"
   },

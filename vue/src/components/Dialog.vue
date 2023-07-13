@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid';
 
 const props = withDefaults(defineProps<{
     left?: string;

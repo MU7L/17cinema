@@ -9,7 +9,6 @@ post {{url}}/create
 {{json}}
 
 {
-    "nickname": "114514",
     "title": "114514"
 }
 
@@ -18,7 +17,5 @@ post {{url}}/join
 {{json}}
 
 {
-    "nickname": "1919810",
-    "roomUuid": "64a3907aa3382c36778d8cb2",
-    "invitation": "ES5G2"
+    "invitation": "64a3907aa3382c36778d8cb2-ES5G2"
 }

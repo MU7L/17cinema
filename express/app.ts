@@ -1,17 +1,18 @@
 import express from "express";
-import apiRouter from './router/api';
-import initDB from './db';
-import { DB_URL, PORT, CLIENT } from "./configs";
+import { createServer } from "http";
 import cors from 'cors';
+import router from './router/api';
+import useMongo from './db/mongodb';
+import { useRedis } from "./db/redis";
+import { PORT, CLIENT } from "./configs";
 import logger from "./logger";
+import useSocket from "./router/ws";
 
-
-logger.info('服务器启动')
-// 连接数据库
-logger.info('连接数据库');
-initDB(DB_URL);
+useMongo();
+useRedis();
 
 const app = express();
+const httpServer = createServer(app);
 
 // 跨域
 app.use(cors({
@@ -23,12 +24,17 @@ app.use(cors({
 app.use(express.json());
 
 // api 模块
-app.use('/api', apiRouter);
+app.use('/api', router);
+
+// ws 模块
+useSocket(httpServer);
 
 app.get('/', (req, res) => {
-    res.send(`<a url="${CLIENT}">17cinema</a>`);
-})
-
-export default app.listen(PORT, () => {
-    logger.info(`服务器运行于: http://localhost:${PORT}`);
+    res.send(`<a href="${CLIENT}">17cinema</a>`);
 });
+
+httpServer.listen(3001);
+// app.listen(3001)
+logger.info(`服务器运行于: http://localhost:${PORT}`);
+
+export default httpServer;

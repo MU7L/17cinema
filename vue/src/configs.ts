@@ -1,5 +1,5 @@
 export const API_ADDR = 'http://localhost:3001/api';
-export const WS_ADDR = 'ws://localhost:3001/ws/room';
+export const WS_ADDR = 'ws://localhost:3001';
 export const enum State {
     LOADING,    //表示同步中，可能本地已经加载完成，但是需要等待server的ready指令
     INIT,       //表示初始化结束，等待server的下一次同步

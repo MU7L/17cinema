@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import { Recv, checkRoom } from '../apis';
 
 const routes = [
     {
@@ -11,16 +10,12 @@ const routes = [
         path: '/room/:id',
         name: 'Room',
         component: () => import('@/pages/Room.vue'),
+        // 只检查本地有无通行证
         beforeEnter: async () => {
             const id = sessionStorage.getItem('id');
             const token = sessionStorage.getItem('token');
             if (!id || !token) {
-                return '/';
-            }
-            const recv:Recv<null> = await checkRoom(id, token);
-            if(recv.code !== 200) {
-                alert(recv.msg);
-                return '/';
+                // return '/';
             }
         },
     }
