@@ -1,7 +1,10 @@
 {
-  "name": "vue",
-  "private": true,
-  "version": "0.0.0",
+  "name": "17cinema-vue",
+  "version": "1.0.1",
+  "main": "main.ts",
+  "author": "MUJL",
+  "license": "ISC",
+  "description": "the frontend of cinema",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,11 +13,14 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
-    "clipboard": "^2.0.11",
+    "@vueuse/core": "^10.2.1",
+    "@xstate/vue": "^2.0.0",
     "pinia": "^2.1.4",
     "socket.io-client": "^4.7.1",
+    "typed.js": "^2.0.16",
     "vue": "^3.2.47",
-    "vue-router": "^4.2.2"
+    "vue-router": "^4.2.2",
+    "xstate": "^4.38.1"
   },
   "devDependencies": {
     "@types/node": "^20.3.2",

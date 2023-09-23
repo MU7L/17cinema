@@ -3,9 +3,15 @@
 @tailwind utilities;
 
 body {
-    @apply bg-stone-800 text-white
+    @apply bg-stone-900 text-white;
 }
 
-.center {
-    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+#app {
+    @apply h-full;
+}
+
+@layer components {
+    .btn-hover {
+        @apply rounded transition hover:bg-gray-600/60;
+    }
 }
